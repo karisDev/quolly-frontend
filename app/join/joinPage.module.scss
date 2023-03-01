@@ -1,0 +1,40 @@
+.joinPageWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  .joinPage {
+    padding: 0 24px;
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    .logoDesktop {
+      margin-bottom: 32px;
+    }
+    .joinPageForm {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .loginPageLink {
+      margin-top: 32px;
+      text-align: center;
+      font-size: 16px;
+      color: var(--text-color-accent);
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .joinPageFooter {
+    margin-top: auto;
+    margin-bottom: 20px;
+  }
+}

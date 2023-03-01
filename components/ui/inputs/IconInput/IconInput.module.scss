@@ -1,0 +1,38 @@
+.iconInputWrapper {
+  position: relative;
+  width: 100%;
+  .iconContainer {
+    position: absolute;
+    top: 17px;
+    left: 16px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      width: 100%;
+      height: 100%;
+      color: var(--text-color-main);
+    }
+  }
+  input {
+    padding: 16px;
+    padding-left: 48px;
+    font-size: 20px;
+    background-color: transparent;
+    box-sizing: border-box;
+    outline: none;
+    color: var(--text-color-main);
+    border: 2px solid var(--text-color-main);
+    border-radius: 16px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+    &:focus {
+      border: 2px solid var(--color-accent-1);
+    }
+    &::placeholder {
+      color: var(--text-color-main);
+    }
+  }
+}

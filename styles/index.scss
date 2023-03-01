@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap");
+
+$bg-color-dark: #282828;
+$text-color-main: #ffffff;
+$text-color-accent: #959ab0;
+
+$btn-main-bg-color: #90ffa2;
+$btn-main-text-color: #282828;
+$btn-main-shadow-color: #ffffff;
+$btn-main-disabled-bg-color: #5f5f5f;
+$btn-main-disabled-text-color: #989898;
+$btn-main-disabled-shadow-color: #989898;
+
+$color-accent-1: #90ffa2;
+
+$color-palette-1: #fdff90;
+$color-palette-2: #90e4ff;
+$color-palette-3: #c059ff;
+$color-palette-4: #ff90a4;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $bg-color-dark;
+  color: $text-color-main;
+  --text-color-main: #{$text-color-main};
+  --text-color-accent: #{$text-color-accent};
+  --color-accent-1: #{$color-accent-1};
+  --color-palette-1: #{$color-palette-1};
+  --color-palette-2: #{$color-palette-2};
+  --color-palette-3: #{$color-palette-3};
+  --color-palette-4: #{$color-palette-4};
+
+  --btn-main-bg-color: #{$btn-main-bg-color};
+  --btn-main-text-color: #{$btn-main-text-color};
+  --btn-main-shadow-color: #{$btn-main-shadow-color};
+  --btn-main-disabled-bg-color: #{$btn-main-disabled-bg-color};
+  --btn-main-disabled-text-color: #{$btn-main-disabled-text-color};
+  --btn-main-disabled-shadow-color: #{$btn-main-disabled-shadow-color};
+}
+
+html,
+body {
+  height: 100%;
+}
