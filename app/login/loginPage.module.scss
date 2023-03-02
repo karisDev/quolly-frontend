@@ -1,0 +1,48 @@
+.loginPageWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 24px;
+  .loginPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    .logoApp {
+      margin-bottom: 64px;
+    }
+    .loginPageForm {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 500px;
+      width: 100%;
+      .error {
+        color: var(--color-error);
+        text-align: center;
+      }
+    }
+    .loginPageFooter {
+      margin-top: 16px;
+      text-align: center;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: var(--text-color-accent);
+      a {
+        color: var(--text-color-accent);
+        &:hover {
+          text-decoration: none;
+        }
+      }
+      .joinGameLink {
+        margin-top: 32px;
+        font-weight: 700;
+        color: var(--color-accent-1);
+      }
+    }
+  }
+}

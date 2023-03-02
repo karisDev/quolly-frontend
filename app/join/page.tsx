@@ -27,7 +27,7 @@ const page = () => {
   return (
     <main className={cl.joinPageWrapper}>
       <div className={cl.joinPage}>
-        <QuollySvg className={cl.logoDesktop} />
+        <QuollySvg className={cl.logoApp} />
         <form className={cl.joinPageForm}>
           <div className={cl.pinFieldWrapper}>
             <p className={cl.pinPlaceholder}>Введите код игры</p>
@@ -39,7 +39,7 @@ const page = () => {
               resolveError={() => setError("")}
             />
           </div>
-          <p className={cl.error}>{error}</p>
+          {error && <p className={cl.error}>{error}</p>}
           <MainButton
             className={cl.joinSubmit}
             disabled={formDisabled}
@@ -54,7 +54,7 @@ const page = () => {
         </p>
       </div>
       <div className={cl.joinPageFooter}>
-        <ItamSvg className={cl.logoClub} />
+        <ItamSvg />
       </div>
     </main>
   );
