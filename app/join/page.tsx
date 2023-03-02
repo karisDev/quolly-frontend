@@ -6,6 +6,7 @@ import MainButton from "@/components/ui/buttons/MainButton/MainButton";
 import Link from "next/link";
 import PinField from "@/components/ui/inputs/PinField/PinField";
 import { useRef, useState } from "react";
+import { redirect } from "next/navigation";
 
 const page = () => {
   const pinFieldRef = useRef<any>(null);
@@ -14,8 +15,9 @@ const page = () => {
 
   const onPinComplete = (pin: string) => {
     // setFormDisabled(true);
+    // setError("Неверный код игры");
     console.log(pin);
-    setError("Неверный код игры");
+    redirect("/room/" + pin);
   };
 
   const submitClick = () => {

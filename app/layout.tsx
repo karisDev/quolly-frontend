@@ -1,5 +1,5 @@
 import "/styles/index.scss";
-import MainNav from "@/components/navbars/MainNav";
+import MainNav from "@/components/ui/navbars/MainNav";
 
 export const metadata = {
   title: "Create Next App",

@@ -1,5 +1,3 @@
-"use client";
-import React, { useState } from "react";
 import cl from "./IconInput.module.scss";
 
 interface IProps {
@@ -21,26 +19,23 @@ const IconInput = ({
   className,
   disabled,
 }: IProps) => {
-  const [isFocused, setIsFocused] = useState(false);
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (onChange) onChange(e);
   };
 
   return (
     <div
-      className={`${cl.iconInputWrapper} ${
-        isFocused ? cl.focused : ""
-      } ${className} ${disabled ? cl.disabled : ""}`}
+      className={`${cl.iconInputWrapper} ${className} ${
+        disabled ? cl.disabled : ""
+      }`}
     >
       <div className={cl.iconContainer}>{icon}</div>
       <input
+        disabled={disabled}
         placeholder={placeholder}
         type={type}
         value={value}
         onChange={handleInputChange}
-        onFocus={() => setIsFocused(true)}
-        onBlur={() => setIsFocused(false)}
       />
     </div>
   );
