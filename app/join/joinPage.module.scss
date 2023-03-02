@@ -23,6 +23,11 @@
       .pinPlaceholder {
         color: var(--text-color-accent);
       }
+      .error {
+        color: var(--color-error);
+        margin-top: 16px;
+        text-align: center;
+      }
       .joinSubmit {
         margin-top: 16px;
       }

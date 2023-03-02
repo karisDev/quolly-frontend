@@ -17,6 +17,9 @@
   transition-duration: 250ms;
   transition-property: color, border, box-shadow, transform;
   overflow: hidden;
+  &.error {
+    border-color: var(--color-error) !important;
+  }
   &::placeholder {
     color: #fff;
   }

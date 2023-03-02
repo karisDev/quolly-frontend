@@ -10,10 +10,12 @@ import { useRef, useState } from "react";
 const page = () => {
   const pinFieldRef = useRef<any>(null);
   const [formDisabled, setFormDisabled] = useState(false);
+  const [error, setError] = useState("");
 
   const onPinComplete = (pin: string) => {
-    setFormDisabled(true);
+    // setFormDisabled(true);
     console.log(pin);
+    setError("Неверный код игры");
   };
 
   const submitClick = () => {
@@ -33,8 +35,11 @@ const page = () => {
               innerRef={pinFieldRef}
               disabled={formDisabled}
               onComplete={onPinComplete}
+              error={!!error}
+              resolveError={() => setError("")}
             />
           </div>
+          <p className={cl.error}>{error}</p>
           <MainButton
             className={cl.joinSubmit}
             disabled={formDisabled}

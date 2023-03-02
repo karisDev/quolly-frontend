@@ -4,19 +4,30 @@ import { PinField as ReactPinField } from "react-pin-field";
 import cl from "./PinField.module.scss";
 
 interface IProps {
-  onComplete?: (pin: string) => void;
+  onComplete: (pin: string) => void;
   disabled?: boolean;
   innerRef?: any;
+  error?: boolean;
+  resolveError?: () => void;
 }
 
-const PinField: FC<IProps> = ({ onComplete, disabled, innerRef }) => {
+const PinField: FC<IProps> = ({
+  onComplete,
+  disabled,
+  innerRef,
+  error,
+  resolveError,
+}) => {
   return (
     <div className={cl.pinFieldWrapper}>
       <ReactPinField
         ref={innerRef}
+        className={`${cl.pinField} ${error ? cl.error : ""}`}
         disabled={disabled}
+        onChange={() => {
+          error && resolveError && resolveError();
+        }}
         onComplete={onComplete}
-        className={cl.pinField}
         autoFocus
         length={6}
         validate="0123456789"
