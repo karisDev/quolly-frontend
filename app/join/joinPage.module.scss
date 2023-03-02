@@ -12,24 +12,43 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    // width: 100%;
     .logoDesktop {
-      margin-bottom: 32px;
+      margin-bottom: 64px;
     }
     .joinPageForm {
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      .pinPlaceholder {
+        color: var(--text-color-accent);
+      }
+      .joinSubmit {
+        margin-top: 16px;
+      }
+      .pinFieldWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        @media screen and (max-width: 430px) {
+          flex-direction: column-reverse;
+          text-align: center;
+          gap: 16px;
+        }
+      }
     }
     .loginPageLink {
       margin-top: 32px;
       text-align: center;
-      font-size: 16px;
+      font-size: 20px;
       color: var(--text-color-accent);
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
+      a {
+        font-weight: 700;
+        color: var(--color-accent-1);
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }

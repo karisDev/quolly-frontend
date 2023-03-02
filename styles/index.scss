@@ -12,6 +12,7 @@ $btn-main-disabled-text-color: #989898;
 $btn-main-disabled-shadow-color: #989898;
 
 $color-accent-1: #90ffa2;
+$color-error: #ff90a4;
 
 $color-palette-1: #fdff90;
 $color-palette-2: #90e4ff;
@@ -28,6 +29,8 @@ $color-palette-4: #ff90a4;
 body {
   background-color: $bg-color-dark;
   color: $text-color-main;
+
+  --color-error: #{$color-error};
   --text-color-main: #{$text-color-main};
   --text-color-accent: #{$text-color-accent};
   --color-accent-1: #{$color-accent-1};
