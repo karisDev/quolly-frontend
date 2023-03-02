@@ -22,6 +22,7 @@
       flex-direction: column;
       .pinPlaceholder {
         color: var(--text-color-accent);
+        font-size: 18px;
       }
       .error {
         color: var(--color-error);
@@ -29,7 +30,7 @@
         text-align: center;
       }
       .joinSubmit {
-        margin-top: 16px;
+        margin-top: 32px;
       }
       .pinFieldWrapper {
         display: flex;
@@ -45,7 +46,7 @@
     .loginPageLink {
       margin-top: 64px;
       text-align: center;
-      font-size: 20px;
+      font-size: 18px;
       color: var(--text-color-accent);
       a {
         font-weight: 700;
@@ -56,9 +57,5 @@
         }
       }
     }
-  }
-  .joinPageFooter {
-    margin-top: auto;
-    margin-bottom: 20px;
   }
 }

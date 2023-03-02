@@ -1,12 +1,12 @@
 "use client";
 import cl from "./joinPage.module.scss";
-import ItamSvg from "../assets/vectors/itam.svg";
 import QuollySvg from "../assets/vectors/quolly.svg";
 import MainButton from "@/components/ui/buttons/MainButton/MainButton";
 import Link from "next/link";
 import PinField from "@/components/ui/inputs/PinField/PinField";
 import { useRef, useState } from "react";
 import { redirect } from "next/navigation";
+import ItamWatermark from "@/components/ui/watermarks/ItamWatermark";
 
 const page = () => {
   const pinFieldRef = useRef<any>(null);
@@ -55,9 +55,7 @@ const page = () => {
           Учитель? <Link href="/login">Войти</Link>
         </p>
       </div>
-      <div className={cl.joinPageFooter}>
-        <ItamSvg />
-      </div>
+      <ItamWatermark />
     </main>
   );
 };

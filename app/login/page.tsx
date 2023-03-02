@@ -5,9 +5,10 @@ import PasswordSvg from "../assets/vectors/password.svg";
 import QuollySvg from "../assets/vectors/quolly.svg";
 import IconInput from "@/components/ui/inputs/IconInput/IconInput";
 import MainButton from "@/components/ui/buttons/MainButton/MainButton";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import ItamWatermark from "@/components/ui/watermarks/ItamWatermark";
 
 const page = () => {
   const router = useRouter();
@@ -58,6 +59,7 @@ const page = () => {
           </Link>
         </div>
       </div>
+      <ItamWatermark />
     </main>
   );
 };

@@ -1,6 +1,6 @@
 import cl from "./IconInput.module.scss";
 
-interface IProps {
+interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
   icon: JSX.Element;
   placeholder?: string;
   type?: string;
@@ -8,16 +8,19 @@ interface IProps {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   className?: string;
   disabled?: boolean;
+  error?: boolean;
+  name?: string;
 }
 
 const IconInput = ({
   icon,
   placeholder,
   type,
-  value,
   onChange,
   className,
-  disabled,
+  error,
+  name,
+  ...props
 }: IProps) => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (onChange) onChange(e);
@@ -25,17 +28,15 @@ const IconInput = ({
 
   return (
     <div
-      className={`${cl.iconInputWrapper} ${className} ${
-        disabled ? cl.disabled : ""
-      }`}
+      className={`${cl.iconInputWrapper} ${className} ${error ? cl.error : ""}`}
     >
       <div className={cl.iconContainer}>{icon}</div>
       <input
-        disabled={disabled}
+        name={name}
         placeholder={placeholder}
         type={type}
-        value={value}
         onChange={handleInputChange}
+        {...props}
       />
     </div>
   );
