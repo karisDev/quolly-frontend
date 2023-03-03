@@ -1,3 +1,8 @@
+.helperText {
+  font-weight: 800;
+  color: var(--text-color-accent);
+}
+
 .roomPageWrapper {
   height: 100%;
   max-width: 700px;
@@ -63,10 +68,8 @@
   grid-template-rows: 1fr 1fr;
   gap: 16px;
   align-items: center;
-  margin: 16px;
   width: 100%;
   .questionDetails {
-    box-sizing: border-box;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -74,10 +77,6 @@
     justify-content: space-evenly;
     height: 100%;
     max-height: 400px;
-    .helperText {
-      font-weight: 800;
-      color: var(--text-color-accent);
-    }
     .questionText {
       font-size: 36px;
       font-weight: 800;
@@ -97,6 +96,7 @@
     grid-template-columns: 1fr 1fr;
     grid-gap: 16px;
     width: 100%;
+    margin-bottom: 24px;
     .answerCard {
       display: flex;
       align-items: center;
@@ -140,6 +140,88 @@
     }
     .answerCard:nth-child(4) {
       background-color: var(--color-palette-4);
+    }
+  }
+}
+
+.leaderboardScreenWrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .leaderboardHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 90px;
+    margin-bottom: 64px;
+  }
+  .leaderboard {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+    padding-bottom: 24px;
+  }
+  .leaderboardCard {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    font-weight: 800;
+    font-size: 20px;
+    height: 80px;
+    border-radius: 16px;
+    box-shadow: 0px 4px 0px var(--text-color-main);
+    border: 2px solid var(--text-color-main);
+    background-color: var(--text-color-main);
+    color: var(--bg-color-main);
+    &:nth-child(1) {
+      background-color: var(--color-palette-3);
+    }
+    &:nth-child(2) {
+      background-color: var(--color-palette-4);
+    }
+    &:nth-child(3) {
+      background-color: var(--color-palette-1);
+    }
+    .leaderboardCardRank {
+      min-width: 30px;
+    }
+    .leaderboardCardName {
+      margin-left: 16px;
+      margin-right: auto;
+    }
+    .leaderboardCardEarned {
+      font-size: 16px;
+    }
+    .leaderboardCardScore {
+      font-size: 16px;
+      padding: 10px 16px;
+      margin-left: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0px 2px 0px var(--bg-color-main);
+      border: 2px solid var(--bg-color-main);
+      background-color: var(--color-success);
+      border-radius: 12px;
+      min-width: 75px;
+    }
+  }
+  .currentPlayerWrapper {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 0 24px;
+    padding-top: 32px;
+    padding-bottom: 48px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+    .currentPlayer {
+      max-width: calc(700px - 48px);
+      margin: 0 auto;
     }
   }
 }

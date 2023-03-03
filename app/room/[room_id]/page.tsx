@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import EnterScreen from "./EnterScreen";
+import LeaderboardScreen from "./LeaderboardScreen";
 import QuestionScreen from "./QuestionScreen";
 import cl from "./roomPage.module.scss";
 import WaitingScreen from "./WaitingScreen";
@@ -18,9 +19,42 @@ const MockQuestion = {
   questionText: "Какой сегодня день?",
   questionNumber: 1,
   secondsLeft: 3,
-  timeGiven: 15,
+  timeGiven: 10,
   answers: ["Понедельник", "Вторник", "Среда", "Четверг"],
   correctAnswer: "Вторник",
+};
+
+const MockLeaderboard = {
+  questionNumber: 1,
+  questionCount: 10,
+  players: [
+    {
+      name: "Иван",
+      score: 12.84,
+      earned: 1.23,
+    },
+    {
+      name: "Петр",
+      score: 4.63,
+      earned: 1.22,
+    },
+    {
+      name: "Сидор",
+      score: 3.12,
+      earned: 1.21,
+    },
+    {
+      name: "Иван",
+      score: 5.84,
+      earned: 1.23,
+    },
+  ],
+  currentPlayer: {
+    place: 9,
+    name: "Петр",
+    score: 4.63,
+    earned: 1.22,
+  },
 };
 
 // @ts-ignore
@@ -40,7 +74,7 @@ const Page = ({ params }) => {
 
     setTimeout(() => {
       setGameStatus(GameStatus.QUESTION);
-    }, 3000);
+    }, 2500);
   };
 
   // temporary
@@ -48,9 +82,16 @@ const Page = ({ params }) => {
   const [correctAnswer, setCorrectAnswer] = useState("");
 
   useEffect(() => {
-    if (gameStatus == GameStatus.QUESTION) {
-      setCorrectAnswer("");
-      setTimeLeft(15);
+    switch (gameStatus) {
+      case GameStatus.QUESTION:
+        setCorrectAnswer("");
+        setTimeLeft(10);
+        break;
+      case GameStatus.ANSWER:
+        setTimeout(() => {
+          setGameStatus(GameStatus.LEADERBOARD);
+        }, 3000);
+        break;
     }
   }, [gameStatus]);
 
@@ -97,6 +138,9 @@ const Page = ({ params }) => {
           secondsLeft={timeLeft}
           correctAnswer={correctAnswer}
         />
+      )}
+      {gameStatus === GameStatus.LEADERBOARD && (
+        <LeaderboardScreen {...MockLeaderboard} />
       )}
     </div>
   );
