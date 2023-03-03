@@ -10,7 +10,7 @@ const MainNav = () => {
   const showNavbar = routesWithNavbar.includes(pathname ? pathname : "");
   return showNavbar ? (
     <div className={cl.mainNav}>
-      <h1>"yeah bro"</h1>
+      <h1>yeah bro</h1>
     </div>
   ) : (
     <></>

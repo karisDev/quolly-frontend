@@ -8,7 +8,7 @@ import { useRef, useState } from "react";
 import { redirect } from "next/navigation";
 import ItamWatermark from "@/components/ui/watermarks/ItamWatermark";
 
-const page = () => {
+const Page = () => {
   const pinFieldRef = useRef<any>(null);
   const [formDisabled, setFormDisabled] = useState(false);
   const [error, setError] = useState("");
@@ -60,4 +60,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

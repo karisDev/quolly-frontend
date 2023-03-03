@@ -6,7 +6,10 @@ export default function NotFound() {
   const router = useRouter();
 
   useEffect(() => {
-    router.push("/join");
+    const navigateJoin = () => {
+      router.push("/join");
+    };
+    navigateJoin();
   }, []);
 
   return <></>;

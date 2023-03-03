@@ -29,6 +29,7 @@ const CircularProgress: FC<IProps> = ({
         styles={buildStyles({
           pathTransition: "linear",
           pathTransitionDuration: 1,
+          textSize: 24,
         })}
         value={value - 1}
         maxValue={maxValue && maxValue - 1}

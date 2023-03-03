@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import ItamWatermark from "@/components/ui/watermarks/ItamWatermark";
 
-const page = () => {
+const Page = () => {
   const router = useRouter();
   const [formDisabled, setFormDisabled] = useState(false);
   const [error, setError] = useState("");
@@ -64,4 +64,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

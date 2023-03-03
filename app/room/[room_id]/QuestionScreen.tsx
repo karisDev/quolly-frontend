@@ -26,6 +26,7 @@ const QuestionScreen: FC<IProps> = ({
         <p className={cl.helperText}>Вопрос {questionNumber}</p>
         <h1 className={cl.questionText}>{questionText}</h1>
         <CircularProgress
+          size={150}
           text={timeLeft}
           value={timeLeft}
           maxValue={timeGiven}

@@ -31,8 +31,8 @@ const MockQuestion = {
 };
 
 // @ts-ignore
-const page = ({ params }) => {
-  const [gameStatus, setGameStatus] = useState(GameStatus.QUESTION);
+const Page = ({ params }) => {
+  const [gameStatus, setGameStatus] = useState(GameStatus.WAITING);
   const [timeLeft, setTimeLeft] = useState(15);
   const roomId = params.room_id;
 
@@ -71,4 +71,4 @@ const page = ({ params }) => {
   );
 };
 
-export default page;
+export default Page;
