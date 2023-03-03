@@ -10,7 +10,7 @@ const WaitingScreen = () => {
         <div className={cl.body}>
           <h1 className={cl.waitingScreenHeader}>Ждём остальных игроков 👀</h1>
           <div className={cl.waitingAnimation}>
-            <Suspense fallback={<></>}>
+            <Suspense>
               <BoxAnimation size={100} />
             </Suspense>
           </div>

@@ -1,5 +1,4 @@
 "use client";
-import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import EnterScreen from "./EnterScreen";
 import QuestionScreen from "./QuestionScreen";
@@ -32,7 +31,7 @@ const MockQuestion = {
 
 // @ts-ignore
 const Page = ({ params }) => {
-  const [gameStatus, setGameStatus] = useState(GameStatus.WAITING);
+  const [gameStatus, setGameStatus] = useState(GameStatus.NAME_INPUT);
   const [timeLeft, setTimeLeft] = useState(15);
   const roomId = params.room_id;
 
