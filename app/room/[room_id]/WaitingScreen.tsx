@@ -7,7 +7,7 @@ const WaitingScreen = () => {
     <>
       <div className={cl.waitingScreenWrapper}>
         <div className={cl.body}>
-          <h1 className={cl.waitingScreenHeader}>Ждем остальных игроков 👀</h1>
+          <h1 className={cl.waitingScreenHeader}>Ждём остальных игроков 👀</h1>
           <div className={cl.waitingAnimation}>
             <BoxAnimation size={100} />
           </div>

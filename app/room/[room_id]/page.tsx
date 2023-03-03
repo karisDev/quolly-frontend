@@ -1,6 +1,6 @@
 "use client";
 import dynamic from "next/dynamic";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import EnterScreen from "./EnterScreen";
 import QuestionScreen from "./QuestionScreen";
 import cl from "./roomPage.module.scss";
@@ -25,18 +25,34 @@ enum GameStatus {
 const MockQuestion = {
   questionText: "Какой сегодня день?",
   questionNumber: 1,
-  timeLeft: 10,
+  timeLeft: 3,
+  timeGiven: 15,
   answers: ["Понедельник", "Вторник", "Среда", "Четверг"],
 };
 
 // @ts-ignore
 const page = ({ params }) => {
   const [gameStatus, setGameStatus] = useState(GameStatus.QUESTION);
+  const [timeLeft, setTimeLeft] = useState(15);
   const roomId = params.room_id;
 
   const onAnswer = (answer: string) => {
     console.log(answer);
   };
+
+  useEffect(() => {
+    // change time left every second, loop it
+    const interval = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev === 0) {
+          return 15;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className={cl.roomPageWrapper}>
@@ -45,7 +61,11 @@ const page = ({ params }) => {
       )}
       {gameStatus === GameStatus.WAITING && <WaitingScreen />}
       {gameStatus === GameStatus.QUESTION && (
-        <QuestionScreen onAnswer={onAnswer} {...MockQuestion} />
+        <QuestionScreen
+          onAnswer={onAnswer}
+          {...MockQuestion}
+          timeLeft={timeLeft}
+        />
       )}
     </div>
   );
