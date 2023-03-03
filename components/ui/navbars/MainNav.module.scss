@@ -39,15 +39,13 @@
       display: flex;
       gap: 32px;
       .mainNavButton {
-        cursor: pointer;
         font-weight: 800;
-        border-radius: 6px;
-        font-size: 16px;
-        border: none;
+        border-radius: 8px;
         background-color: var(--color-accent-1);
         color: var(--bg-color-main);
         padding: 12px 16px;
-        height: min-content;
+        text-decoration: none;
+        text-align: center;
       }
       .mainNavUser {
         display: flex;

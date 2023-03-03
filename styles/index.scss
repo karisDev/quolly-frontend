@@ -11,6 +11,10 @@ $btn-main-disabled-bg-color: #5f5f5f;
 $btn-main-disabled-text-color: #989898;
 $btn-main-disabled-shadow-color: #989898;
 
+$input-secondary-bg-color: #424242;
+$input-secondary-placeholder-color: rgba(255, 255, 255, 0.36);
+$input-secondary-shadow-color: #18191f;
+
 $color-accent-1: #90ffa2;
 $color-error: #ff90a4;
 
@@ -41,6 +45,10 @@ body {
   --color-palette-3: #{$color-palette-3};
   --color-palette-4: #{$color-palette-4};
   --text-color-palette: #{$bg-color-dark};
+
+  --input-secondary-bg-color: #{$input-secondary-bg-color};
+  --input-secondary-placeholder-color: #{$input-secondary-placeholder-color};
+  --input-secondary-shadow-color: #{$input-secondary-shadow-color};
 
   --btn-main-bg-color: #{$btn-main-bg-color};
   --btn-main-text-color: #{$btn-main-text-color};

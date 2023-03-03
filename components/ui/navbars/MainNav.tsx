@@ -33,7 +33,9 @@ const MainNav = () => {
           </li>
         </ul>
         <div className={cl.mainNavRight}>
-          <button className={cl.mainNavButton}>Создать квиз</button>
+          <Link className={cl.mainNavButton} href="/create_quiz">
+            Создать квиз
+          </Link>
           <div className={cl.mainNavUser}>
             <div className={cl.mainNavUserBody}>
               <h3 className={cl.mainNavUserName}>John Doe</h3>
