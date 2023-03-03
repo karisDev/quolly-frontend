@@ -1,6 +1,7 @@
-import BoxAnimation from "@/components/ui/loaders/BoxAnimation";
 import ItamWatermark from "@/components/ui/watermarks/ItamWatermark";
 import cl from "./roomPage.module.scss";
+import BoxAnimation from "@/components/ui/loaders/BoxAnimation";
+import { Suspense } from "react";
 
 const WaitingScreen = () => {
   return (
@@ -9,7 +10,9 @@ const WaitingScreen = () => {
         <div className={cl.body}>
           <h1 className={cl.waitingScreenHeader}>Ждём остальных игроков 👀</h1>
           <div className={cl.waitingAnimation}>
-            <BoxAnimation size={100} />
+            <Suspense fallback={<></>}>
+              <BoxAnimation size={100} />
+            </Suspense>
           </div>
         </div>
         <ItamWatermark />

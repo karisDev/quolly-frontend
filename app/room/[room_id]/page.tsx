@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import EnterScreen from "./EnterScreen";
 import QuestionScreen from "./QuestionScreen";
 import cl from "./roomPage.module.scss";
-const WaitingScreen = dynamic(() => import("./WaitingScreen"), { ssr: false });
+import WaitingScreen from "./WaitingScreen";
 
 enum GameStatus {
   NAME_INPUT,
