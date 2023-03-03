@@ -1,0 +1,23 @@
+.accentButton {
+  display: flex;
+  border: none;
+  background-color: var(--text-color-main);
+  color: var(--bg-color-main);
+  font-weight: 700;
+  font-size: 18px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  gap: 12px;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  &:hover:not(.outlined) {
+    background-color: var(--color-accent-1);
+    color: var(--bg-color-main);
+  }
+  &.outlined {
+    outline: 2px solid var(--text-color-accent);
+    background-color: transparent;
+    color: var(--text-color-accent);
+  }
+}

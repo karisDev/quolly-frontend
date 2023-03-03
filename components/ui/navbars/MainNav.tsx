@@ -43,7 +43,7 @@ const MainNav = () => {
             </div>
             <img
               className={cl.mainNavUserAvatarImg}
-              src="https://picsum.photos/200/200"
+              src="https://picsum.photos/40/40"
               alt="avatar"
             />
           </div>
