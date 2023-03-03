@@ -92,9 +92,13 @@ const Page = () => {
                   <BookmarkSvg />
                 </button>
               </div>
-              <img src="https://picsum.photos/300/200" alt="" />
+              <img
+                className={cl.image}
+                src="https://picsum.photos/300/200"
+                alt=""
+              />
             </div>
-            <div className={cl.quizCardHeader}>
+            <div className={cl.quizCardInfo}>
               <h3>{quiz.title}</h3>
               <p
                 className={cl.helperText}

@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap");
 
 $bg-color-dark: #282828;
+$body-bg-color: #424242;
 $text-color-main: #ffffff;
 $text-color-accent: #959ab0;
 
@@ -37,6 +38,7 @@ body {
   --color-error: #{$color-error};
   --color-success: #{$color-accent-1};
   --bg-color-main: #{$bg-color-dark};
+  --bg-color-accent: #{$body-bg-color};
   --text-color-main: #{$text-color-main};
   --text-color-accent: #{$text-color-accent};
   --color-accent-1: #{$color-accent-1};
