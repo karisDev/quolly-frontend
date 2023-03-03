@@ -42,6 +42,7 @@ const EnterScreen: FC<IProps> = ({ onNameEnter }) => {
           placeholder="Введи свое имя"
           error={!!error}
           autoFocus
+          autoComplete="off"
         />
         {error && <p className={cl.error}>{error}</p>}
         <MainButton type="submit" disabled={!!error}>

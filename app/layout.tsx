@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <body>
+      <body style={{ display: "flex", flexDirection: "column" }}>
         <MainNav />
         {children}
       </body>
