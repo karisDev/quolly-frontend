@@ -14,56 +14,88 @@ enum GameStatus {
   END,
 }
 
-/*
-  onAnswer: (answer: string) => void;
-  questionText: string;
-  questionNumber: number;
-  timeLeft: number;
-  answers: string[];
-*/
 const MockQuestion = {
   questionText: "Какой сегодня день?",
   questionNumber: 1,
-  timeLeft: 3,
+  secondsLeft: 3,
   timeGiven: 15,
   answers: ["Понедельник", "Вторник", "Среда", "Четверг"],
+  correctAnswer: "Вторник",
 };
 
 // @ts-ignore
 const Page = ({ params }) => {
   const [gameStatus, setGameStatus] = useState(GameStatus.NAME_INPUT);
-  const [timeLeft, setTimeLeft] = useState(15);
+  const [selectedAnswer, setSelectedAnswer] = useState("");
   const roomId = params.room_id;
 
-  const onAnswer = (answer: string) => {
-    console.log(answer);
+  const onChooseAnswer = (answer: string) => {
+    if (gameStatus !== GameStatus.QUESTION) return;
+
+    setSelectedAnswer(answer);
   };
 
+  const onNameEnter = (name: string) => {
+    setGameStatus(GameStatus.WAITING);
+
+    setTimeout(() => {
+      setGameStatus(GameStatus.QUESTION);
+    }, 3000);
+  };
+
+  // temporary
+  const [timeLeft, setTimeLeft] = useState(-1);
+  const [correctAnswer, setCorrectAnswer] = useState("");
+
   useEffect(() => {
-    // change time left every second, loop it
+    if (gameStatus == GameStatus.QUESTION) {
+      setCorrectAnswer("");
+      setTimeLeft(15);
+    }
+  }, [gameStatus]);
+
+  useEffect(() => {
+    function decrementTime() {
+      setTimeLeft((timeLeft) => (timeLeft > 0 ? timeLeft - 1 : timeLeft));
+    }
+
     const interval = setInterval(() => {
-      setTimeLeft((prev) => {
-        if (prev === 0) {
-          return 15;
-        }
-        return prev - 1;
-      });
+      decrementTime();
     }, 1000);
 
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    if (timeLeft === 0) {
+      setGameStatus(GameStatus.ANSWER);
+      setCorrectAnswer(MockQuestion.correctAnswer);
+    }
+  }, [timeLeft]);
+
   return (
     <div className={cl.roomPageWrapper}>
       {gameStatus === GameStatus.NAME_INPUT && (
-        <EnterScreen onNameEnter={() => setGameStatus(GameStatus.WAITING)} />
+        <EnterScreen onNameEnter={onNameEnter} />
       )}
       {gameStatus === GameStatus.WAITING && <WaitingScreen />}
+      {/* question or answer */}
       {gameStatus === GameStatus.QUESTION && (
         <QuestionScreen
-          onAnswer={onAnswer}
+          onChooseAnswer={onChooseAnswer}
+          selectedAnswer={selectedAnswer}
           {...MockQuestion}
-          timeLeft={timeLeft}
+          secondsLeft={timeLeft}
+          correctAnswer={correctAnswer}
+        />
+      )}
+      {gameStatus === GameStatus.ANSWER && (
+        <QuestionScreen
+          onChooseAnswer={onChooseAnswer}
+          selectedAnswer={selectedAnswer}
+          {...MockQuestion}
+          secondsLeft={timeLeft}
+          correctAnswer={correctAnswer}
         />
       )}
     </div>

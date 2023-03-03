@@ -73,6 +73,7 @@
     align-items: center;
     justify-content: space-evenly;
     height: 100%;
+    max-height: 400px;
     .helperText {
       font-weight: 800;
       color: var(--text-color-accent);
@@ -81,6 +82,14 @@
       font-size: 36px;
       font-weight: 800;
     }
+    .timeLeft {
+      width: 100%;
+
+      font-size: 24px;
+      &.hurryAlert {
+        color: var(--color-error);
+      }
+    }
   }
   .answersWrapper {
     margin-top: auto;
@@ -88,7 +97,6 @@
     grid-template-columns: 1fr 1fr;
     grid-gap: 16px;
     width: 100%;
-    margin-bottom: 24px;
     .answerCard {
       display: flex;
       align-items: center;
@@ -101,6 +109,25 @@
       font-weight: 700;
       height: 200px;
       word-break: break-all;
+      cursor: pointer;
+    }
+    &.answered {
+      .answerCard {
+        opacity: 0.5;
+        &.selectedAnswer {
+          opacity: 1;
+        }
+      }
+    }
+    &.revealed {
+      .answerCard {
+        &.correctAnswer {
+          background-color: var(--color-success);
+        }
+        &.wrongAnswer {
+          background-color: var(--color-error);
+        }
+      }
     }
     .answerCard:nth-child(1) {
       background-color: var(--color-palette-1);
