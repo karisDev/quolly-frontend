@@ -1,4 +1,3 @@
-"use client";
 import AccentInput from "@/components/ui/inputs/AccentInput/AccentInput";
 import cl from "./dashboardPage.module.scss";
 import SearchSvg from "../assets/vectors/search.svg";

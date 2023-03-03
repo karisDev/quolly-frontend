@@ -4,7 +4,7 @@ import QuollySvg from "../assets/vectors/quolly.svg";
 import MainButton from "@/components/ui/buttons/MainButton/MainButton";
 import Link from "next/link";
 import PinField from "@/components/ui/inputs/PinField/PinField";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { redirect } from "next/navigation";
 import ItamWatermark from "@/components/ui/watermarks/ItamWatermark";
 
@@ -25,6 +25,10 @@ const Page = () => {
       pinFieldRef.current[0].focus();
     }
   };
+
+  useEffect(() => {
+    window.history.pushState({}, "", "/join");
+  }, []);
 
   return (
     <main className={cl.joinPageWrapper}>

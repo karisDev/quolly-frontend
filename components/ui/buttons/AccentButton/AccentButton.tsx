@@ -7,10 +7,10 @@ interface IProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   outlined?: boolean;
 }
 
-const AccentButton: FC<IProps> = ({ children, icon, ...props }) => {
+const AccentButton: FC<IProps> = ({ children, icon, outlined, ...props }) => {
   return (
     <button
-      className={`${cl.accentButton} ${props.outlined ? cl.outlined : ""}`}
+      className={`${cl.accentButton} ${outlined ? cl.outlined : ""}`}
       {...props}
     >
       {icon}
