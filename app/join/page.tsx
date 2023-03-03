@@ -52,7 +52,10 @@ const Page = () => {
           </MainButton>
         </form>
         <p className={cl.loginPageLink}>
-          Учитель? <Link href="/login">Войти</Link>
+          Учитель?{" "}
+          <Link href="/login" prefetch>
+            Войти
+          </Link>
         </p>
       </div>
       <ItamWatermark />
