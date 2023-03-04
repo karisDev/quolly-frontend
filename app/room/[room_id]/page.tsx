@@ -85,7 +85,7 @@ const Page = ({ params }) => {
     switch (gameStatus) {
       case GameStatus.QUESTION:
         setCorrectAnswer("");
-        setTimeLeft(10);
+        setTimeLeft(8);
         break;
       case GameStatus.ANSWER:
         setTimeout(() => {
