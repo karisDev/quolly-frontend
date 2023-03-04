@@ -89,7 +89,9 @@
       }
       @media screen and (max-width: 520px) {
         .quizCardActions {
-          flex-direction: column;
+          button:first-child {
+            display: none;
+          }
         }
         .quizCardInfo {
           margin: 8px 0;
