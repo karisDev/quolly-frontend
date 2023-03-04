@@ -15,7 +15,7 @@ const MainNav = () => {
     <>
       <div className={cl.mainNavWrapper}>
         <div className={cl.mainNav}>
-          <Link href={"/join"}>
+          <Link href={"/join"} aria-label="Присоединиться к игре">
             <QuollySvg className={cl.logo} />
           </Link>
           <ul className={cl.mainNavList}>

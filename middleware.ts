@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-export function middleware(req: any, res: any) {
+export function middleware(req: any) {
   if (req.nextUrl.pathname === "/") {
     const url = req.nextUrl.clone();
     url.pathname = "/join";

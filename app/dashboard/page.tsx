@@ -84,10 +84,10 @@ const Page = () => {
           <div className={cl.quizCard} key={quiz.id}>
             <div className={cl.imageWrapper}>
               <div className={cl.controls}>
-                <button className={cl.iconButton}>
+                <button className={cl.iconButton} aria-label="Удалить">
                   <DeleteSvg />
                 </button>
-                <button className={cl.iconButton}>
+                <button className={cl.iconButton} aria-label="В заметки">
                   <BookmarkSvg />
                 </button>
               </div>

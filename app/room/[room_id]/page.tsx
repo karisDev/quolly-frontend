@@ -121,16 +121,8 @@ const Page = ({ params }) => {
       )}
       {gameStatus === GameStatus.WAITING && <WaitingScreen />}
       {/* question or answer */}
-      {gameStatus === GameStatus.QUESTION && (
-        <QuestionScreen
-          onChooseAnswer={onChooseAnswer}
-          selectedAnswer={selectedAnswer}
-          {...MockQuestion}
-          secondsLeft={timeLeft}
-          correctAnswer={correctAnswer}
-        />
-      )}
-      {gameStatus === GameStatus.ANSWER && (
+      {(gameStatus === GameStatus.ANSWER ||
+        gameStatus === GameStatus.QUESTION) && (
         <QuestionScreen
           onChooseAnswer={onChooseAnswer}
           selectedAnswer={selectedAnswer}

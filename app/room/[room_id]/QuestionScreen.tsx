@@ -1,5 +1,3 @@
-"use client";
-import CircularProgress from "@/components/ui/loaders/CircularProgress/CircularProgress";
 import { FC } from "react";
 import cl from "./roomPage.module.scss";
 
