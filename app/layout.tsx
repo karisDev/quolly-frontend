@@ -18,7 +18,6 @@ export default function RootLayout({
   return (
     <html>
       <body style={{ display: "flex", flexDirection: "column" }}>
-        <script>0</script>
         <MainNav />
         {children}
       </body>
