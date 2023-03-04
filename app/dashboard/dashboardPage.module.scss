@@ -29,7 +29,7 @@
   .quizesWrapper {
     gap: 24px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
     padding-bottom: 64px;
     @media screen and (max-width: 400px) {
       grid-template-columns: 1fr;
@@ -71,20 +71,25 @@
       }
     }
     .quizCard {
+      display: flex;
+      flex-direction: column;
       .quizCardInfo {
-        margin: 16px 0;
+        margin: 8px 0;
+        h3 {
+          font-size: 20px;
+        }
         .helperText {
           color: var(--text-color-accent);
+          font-size: 14px;
         }
       }
       .quizCardActions {
         display: flex;
-        gap: 16px;
+        gap: 8px;
       }
       @media screen and (max-width: 520px) {
         .quizCardActions {
           flex-direction: column;
-          gap: 8px;
         }
         .quizCardInfo {
           margin: 8px 0;
