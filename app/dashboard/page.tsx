@@ -67,7 +67,7 @@ const mockQuizes = [
 
 const Page = () => {
   return (
-    <div className={cl.dashboardPageWrapper}>
+    <div style={{ display: "none" }} className={cl.dashboardPageWrapper}>
       <div className={cl.pageHeader}>
         <h1>Мои квизы</h1>
         <div className={cl.filters}>

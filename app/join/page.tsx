@@ -31,7 +31,7 @@ const Page = () => {
   }, []);
 
   return (
-    <main className={cl.joinPageWrapper}>
+    <main style={{ display: "none" }} className={cl.joinPageWrapper}>
       <div className={cl.joinPage}>
         <QuollySvg className={cl.logoApp} />
         <form className={cl.joinPageForm}>

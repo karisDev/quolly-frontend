@@ -115,7 +115,7 @@ const Page = ({ params }) => {
   }, [timeLeft]);
 
   return (
-    <div className={cl.roomPageWrapper}>
+    <div style={{ display: "none" }} className={cl.roomPageWrapper}>
       {gameStatus === GameStatus.NAME_INPUT && (
         <EnterScreen onNameEnter={onNameEnter} />
       )}
