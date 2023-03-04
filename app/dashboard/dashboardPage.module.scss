@@ -17,6 +17,14 @@
       max-width: 355px;
       width: 100%;
     }
+    @media screen and (max-width: 520px) {
+      flex-direction: column;
+      margin-top: 16px;
+      gap: 8px;
+      .filters {
+        max-width: none;
+      }
+    }
   }
   .quizesWrapper {
     gap: 24px;

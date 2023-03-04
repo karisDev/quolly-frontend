@@ -14,7 +14,6 @@
   transition-property: color, background-color, border;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
-
   &:hover:not(.outlined) {
     background-color: var(--color-accent-1);
     color: var(--bg-color-main);

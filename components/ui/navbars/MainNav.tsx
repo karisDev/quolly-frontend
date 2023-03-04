@@ -15,7 +15,9 @@ const MainNav = () => {
     <>
       <div className={cl.mainNavWrapper}>
         <div className={cl.mainNav}>
-          <QuollySvg className={cl.logo} />
+          <Link href={"/join"}>
+            <QuollySvg className={cl.logo} />
+          </Link>
           <ul className={cl.mainNavList}>
             <li className={cl.mainNavListItem}>
               <Link
@@ -28,8 +30,8 @@ const MainNav = () => {
               </Link>
             </li>
             <li className={cl.mainNavListItem}>
-              <Link className={cl.mainNavLink} href="/dashboard">
-                Подписка
+              <Link className={cl.mainNavLink} href="/join">
+                Присоединиться
               </Link>
             </li>
           </ul>
