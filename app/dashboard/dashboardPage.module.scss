@@ -37,11 +37,20 @@
     .imageWrapper {
       position: relative;
       .controls {
-        top: 8px;
-        left: 8px;
+        padding: 8px;
+        height: 100%;
+        width: 100%;
+        border-radius: 6px;
+        background: rgba(0, 0, 0, 0.17);
         position: absolute;
         display: flex;
         gap: 8px;
+        transition: background-color 0.2s ease-out, box-shadow 0.2s ease-out;
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+        &:hover {
+          background: rgba(0, 0, 0, 0);
+          box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.3);
+        }
         .iconButton {
           display: flex;
           justify-content: center;
