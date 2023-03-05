@@ -67,7 +67,7 @@ const mockQuizes = [
 
 const Page = () => {
   return (
-    <div style={{ display: "none" }} className={cl.dashboardPageWrapper}>
+    <main style={{ display: "none" }} className={cl.dashboardPageWrapper}>
       <div className={cl.pageHeader}>
         <h1>Мои квизы</h1>
         <div className={cl.filters}>
@@ -112,7 +112,7 @@ const Page = () => {
           </div>
         ))}
       </div>
-    </div>
+    </main>
   );
 };
 

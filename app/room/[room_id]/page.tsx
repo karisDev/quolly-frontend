@@ -29,7 +29,7 @@ const MockLeaderboard = {
   questionCount: 10,
   players: [
     {
-      name: "Иван",
+      name: "ИванКрутышкин Крутышкин",
       score: 12.84,
       earned: 1.23,
     },
@@ -115,7 +115,7 @@ const Page = ({ params }) => {
   }, [timeLeft]);
 
   return (
-    <div style={{ display: "none" }} className={cl.roomPageWrapper}>
+    <main style={{ display: "none" }} className={cl.roomPageWrapper}>
       {gameStatus === GameStatus.NAME_INPUT && (
         <EnterScreen onNameEnter={onNameEnter} />
       )}
@@ -134,7 +134,7 @@ const Page = ({ params }) => {
       {gameStatus === GameStatus.LEADERBOARD && (
         <LeaderboardScreen {...MockLeaderboard} />
       )}
-    </div>
+    </main>
   );
 };
 
