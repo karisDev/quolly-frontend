@@ -5,19 +5,22 @@ import MainButton from "@/components/ui/buttons/MainButton/MainButton";
 import Link from "next/link";
 import PinField from "@/components/ui/inputs/PinField/PinField";
 import { useEffect, useRef, useState } from "react";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 import ItamWatermark from "@/components/ui/watermarks/ItamWatermark";
 
 const Page = () => {
   const pinFieldRef = useRef<any>(null);
+  const router = useRouter();
   const [formDisabled, setFormDisabled] = useState(false);
   const [error, setError] = useState("");
 
   const onPinComplete = (pin: string) => {
     // setFormDisabled(true);
     // setError("Неверный код игры");
-    console.log(pin);
-    redirect("/room/" + pin);
+    setFormDisabled(true);
+    setTimeout(() => {
+      router.push("/room/" + pin);
+    }, 1000);
   };
 
   const submitClick = () => {
@@ -27,7 +30,8 @@ const Page = () => {
   };
 
   useEffect(() => {
-    window.history.pushState({}, "", "/join");
+    router.push("/join");
+    router.prefetch("/room/[room_id]");
   }, []);
 
   return (

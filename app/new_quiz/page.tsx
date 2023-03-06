@@ -1,7 +1,11 @@
 import cl from "./newQuizPage.module.scss";
 
 const Page = () => {
-  return <div className={cl.newQuizPageWrapper}>Page</div>;
+  return (
+    <main style={{ display: "none" }} className={cl.newQuizPageWrapper}>
+      Page
+    </main>
+  );
 };
 
 export default Page;
