@@ -60,7 +60,7 @@ const Page = () => {
           </MainButton>
         </form>
         <p className={cl.loginPageLink}>
-          Учитель? <Link href="/login">Войти</Link>
+          <Link href="/login">Войти как учитель</Link>
         </p>
       </div>
       <ItamWatermark />

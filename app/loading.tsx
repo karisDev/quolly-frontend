@@ -1,5 +1,4 @@
 import LoadingEllipsis from "@/components/ui/loaders/LoadingEllipsis/LoadingEllipsis";
-import React from "react";
 
 const Loading = () => {
   return (
