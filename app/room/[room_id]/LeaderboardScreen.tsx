@@ -34,21 +34,19 @@ const LeaderboardScreen: FC<IProps> = ({
       <div className={cl.leaderboard}>
         {players.map((player, index) => (
           <div key={index} className={cl.leaderboardCard}>
-            <div className={cl.leaderboardCardRank}>#{index + 1}</div>
-            <div className={cl.leaderboardCardName}>{player.name}</div>
-            <div className={cl.leaderboardCardEarned}>+{player.earned}</div>
-            <div className={cl.leaderboardCardScore}>{player.score}</div>
+            <p className={cl.rank}>#{index + 1}</p>
+            <p className={cl.name}>{player.name}</p>
+            <p className={cl.earned}>+{player.earned}</p>
+            <p className={cl.score}>{player.score}</p>
           </div>
         ))}
       </div>
       <div className={cl.currentPlayerWrapper}>
         <div className={`${cl.leaderboardCard} ${cl.currentPlayer}`}>
-          <div className={cl.leaderboardCardRank}>#{currentPlayer.place}</div>
-          <div className={cl.leaderboardCardName}>{currentPlayer.name}</div>
-          <div className={cl.leaderboardCardEarned}>
-            +{currentPlayer.earned}
-          </div>
-          <div className={cl.leaderboardCardScore}>{currentPlayer.score}</div>
+          <p className={cl.rank}>#{currentPlayer.place}</p>
+          <p className={cl.name}>{currentPlayer.name}</p>
+          <p className={cl.earned}>+{currentPlayer.earned}</p>
+          <p className={cl.score}>{currentPlayer.score}</p>
         </div>
       </div>
     </div>

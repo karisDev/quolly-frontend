@@ -32,7 +32,7 @@ const Page = () => {
   useEffect(() => {
     router.push("/join");
     router.prefetch("/room/[room_id]");
-  }, []);
+  }, [router]);
 
   return (
     <main style={{ display: "none" }} className={cl.joinPageWrapper}>

@@ -195,17 +195,17 @@
     &:nth-child(3) {
       background-color: var(--color-palette-1);
     }
-    .leaderboardCardRank {
+    .rank {
       min-width: 30px;
     }
-    .leaderboardCardName {
+    .name {
       margin-left: 16px;
       margin-right: auto;
     }
-    .leaderboardCardEarned {
+    .earned {
       font-size: 16px;
     }
-    .leaderboardCardScore {
+    .score {
       font-size: 16px;
       padding: 10px 16px;
       margin-left: 8px;
