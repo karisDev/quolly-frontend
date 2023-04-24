@@ -17,8 +17,12 @@ const Page = () => {
 
   const onFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!e.currentTarget.email.value || !e.currentTarget.password.value) {
+      setError("Неверный логин или пароль");
+      return;
+    }
     setFormDisabled(true);
-    setError("Неверный логин или пароль");
+    router.push("/dashboard");
   };
 
   return (
@@ -27,12 +31,14 @@ const Page = () => {
         <QuollySvg className={cl.logoApp} />
         <form className={cl.loginPageForm} onSubmit={onFormSubmit}>
           <IconInput
+            id="email"
             icon={<EmailSvg />}
             type="email"
             placeholder="Введите почту"
             disabled={formDisabled}
           />
           <IconInput
+            id="password"
             icon={<PasswordSvg />}
             placeholder="Введите пароль"
             type="password"

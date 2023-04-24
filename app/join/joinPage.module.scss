@@ -54,9 +54,8 @@
       a {
         font-weight: 700;
         color: var(--color-accent-1);
-        text-decoration: none;
         &:hover {
-          text-decoration: underline;
+          text-decoration: none;
         }
       }
     }
