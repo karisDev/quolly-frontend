@@ -4,7 +4,7 @@ import EmailSvg from "../assets/vectors/email.svg";
 import PasswordSvg from "../assets/vectors/password.svg";
 import QuollySvg from "../assets/vectors/quolly.svg";
 import IconInput from "@/components/ui/inputs/IconInput/IconInput";
-import MainButton from "@/components/ui/buttons/MainButton/MainButton";
+import Button from "@/components/ui/buttons/Button";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -45,13 +45,13 @@ const Page = () => {
             disabled={formDisabled}
           />
           {error && <p className={cl.error}>{error}</p>}
-          <MainButton
+          <Button
             className={cl.loginSubmit}
             type="submit"
             disabled={formDisabled}
           >
             Войти
-          </MainButton>
+          </Button>
         </form>
         <div className={cl.loginPageFooter}>
           <p className={cl.forgotPassword}>

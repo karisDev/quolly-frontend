@@ -5,7 +5,7 @@ import DeleteSvg from "../assets/vectors/delete.svg";
 import BookmarkSvg from "../assets/vectors/bookmark.svg";
 import EditPenSvg from "../assets/vectors/edit_pen.svg";
 import PlaySvg from "../assets/vectors/play.svg";
-import AccentButton from "@/components/ui/buttons/AccentButton/AccentButton";
+import IconButton from "@/components/ui/buttons/IconButton";
 
 const mockQuizes = [
   {
@@ -104,10 +104,10 @@ const Page = () => {
               >{`${quiz.lastModified} · ${quiz.questionsCount} вопросов`}</p>
             </div>
             <div className={cl.quizCardActions}>
-              <AccentButton outlined icon={<EditPenSvg />}>
+              <IconButton outlined icon={<EditPenSvg />}>
                 Изменить
-              </AccentButton>
-              <AccentButton icon={<PlaySvg />}>Запустить</AccentButton>
+              </IconButton>
+              <IconButton icon={<PlaySvg />}>Запустить</IconButton>
             </div>
           </div>
         ))}

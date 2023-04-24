@@ -1,7 +1,7 @@
 "use client";
 import cl from "./joinPage.module.scss";
 import QuollySvg from "../assets/vectors/quolly.svg";
-import MainButton from "@/components/ui/buttons/MainButton/MainButton";
+import Button from "@/components/ui/buttons/Button/";
 import Link from "next/link";
 import PinField from "@/components/ui/inputs/PinField/PinField";
 import { useEffect, useRef, useState } from "react";
@@ -50,14 +50,14 @@ const Page = () => {
             />
           </div>
           {error && <p className={cl.error}>{error}</p>}
-          <MainButton
+          <Button
             className={cl.joinSubmit}
             disabled={formDisabled}
             onClick={submitClick}
             type="button"
           >
             Вступить!
-          </MainButton>
+          </Button>
         </form>
         <p className={cl.loginPageLink}>
           <Link href="/login">Войти как учитель</Link>

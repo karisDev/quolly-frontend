@@ -2,7 +2,7 @@
 import IconInput from "@/components/ui/inputs/IconInput/IconInput";
 import cl from "./roomPage.module.scss";
 import EditSvg from "../../assets/vectors/edit.svg";
-import MainButton from "@/components/ui/buttons/MainButton/MainButton";
+import Button from "@/components/ui/buttons/Button";
 import ItamWatermark from "@/components/ui/watermarks/ItamWatermark";
 import { FC, useState } from "react";
 
@@ -45,9 +45,9 @@ const EnterScreen: FC<IProps> = ({ onNameEnter }) => {
           autoComplete="off"
         />
         {error && <p className={cl.error}>{error}</p>}
-        <MainButton type="submit" disabled={!!error}>
+        <Button type="submit" disabled={!!error}>
           Поехали!
-        </MainButton>
+        </Button>
       </form>
       <ItamWatermark />
     </div>

@@ -3,7 +3,6 @@ import { usePathname } from "next/navigation";
 import cl from "./MainNav.module.scss";
 import QuollySvg from "public/images/quolly.svg";
 import Link from "next/link";
-import MainButton from "../buttons/MainButton/MainButton";
 
 const routesWithNavbar = ["/dashboard", "/new_quiz"];
 
