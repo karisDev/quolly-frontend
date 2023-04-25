@@ -1,9 +1,12 @@
-import cl from "./newQuizPage.module.scss";
+import cl from "./styles.module.scss";
+import { FiltersView, QuestionView, SlidesView } from "./views";
 
 const Page = () => {
   return (
     <main style={{ display: "none" }} className={cl.newQuizPageWrapper}>
-      Page
+      <SlidesView />
+      <QuestionView />
+      <FiltersView />
     </main>
   );
 };
