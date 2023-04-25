@@ -16,6 +16,7 @@
     .logoApp {
       margin-top: 32px;
       margin-bottom: 64px;
+      max-width: 300px;
     }
     .joinPageForm {
       width: 100%;
@@ -37,10 +38,7 @@
         display: flex;
         flex-direction: column;
         gap: 8px;
-      }
-      @media screen and (max-width: 430px) {
-        .pinFieldWrapper {
-          // flex-direction: column-reverse;
+        @media screen and (max-width: 430px) {
           text-align: center;
           gap: 16px;
         }

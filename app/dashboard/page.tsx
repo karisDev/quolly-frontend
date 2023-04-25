@@ -91,6 +91,7 @@ const Page = () => {
                   <BookmarkSvg />
                 </button>
               </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className={cl.image}
                 src="https://picsum.photos/300/200"

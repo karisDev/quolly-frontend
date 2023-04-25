@@ -3,13 +3,25 @@ import { usePathname } from "next/navigation";
 import cl from "./MainNav.module.scss";
 import QuollySvg from "@/app/assets/vectors/quolly.svg";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
-const routesWithNavbar = ["/dashboard", "/new_quiz"];
+const routesWithNavbar = ["dashboard", "constructor"];
 
 const MainNav = () => {
   const pathname = usePathname();
+  const [showNavbar, setShowNavbar] = useState(false);
 
-  const showNavbar = routesWithNavbar.includes(pathname ? pathname : "");
+  useEffect(() => {
+    console.log(pathname);
+    if (!pathname) {
+      setShowNavbar(false);
+      return;
+    }
+    console.log(pathname.split("/"));
+    setShowNavbar(
+      pathname.split("/").some((r) => routesWithNavbar.indexOf(r) >= 0)
+    );
+  }, [pathname]);
   return showNavbar ? (
     <>
       <div className={cl.mainNavWrapper}>
@@ -35,7 +47,7 @@ const MainNav = () => {
             </li>
           </ul>
           <div className={cl.mainNavRight}>
-            <Link className={cl.mainNavButton} href="/new_quiz">
+            <Link className={cl.mainNavButton} href="/constructor/quiz-152">
               Создать квиз
             </Link>
             <div className={cl.mainNavUser}>
