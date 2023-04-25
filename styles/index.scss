@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap");
 
+$color-accent-1: #ff4f4f;
 $bg-color-dark: #282828;
 $body-bg-color: #424242;
 $text-color-main: #ffffff;
 $text-color-accent: #959ab0;
 
-$btn-main-bg-color: #90ffa2;
+$btn-main-bg-color: $color-accent-1;
 $btn-main-text-color: #282828;
 $btn-main-shadow-color: #ffffff;
 $btn-main-disabled-bg-color: #5f5f5f;
@@ -16,8 +17,8 @@ $input-secondary-bg-color: #424242;
 $input-secondary-placeholder-color: rgba(255, 255, 255, 0.36);
 $input-secondary-shadow-color: #18191f;
 
-$color-accent-1: #90ffa2;
 $color-error: #ff90a4;
+$color-correct: #90ffa2;
 
 $color-palette-1: #fdff90;
 $color-palette-2: #90e4ff;
@@ -36,7 +37,7 @@ body {
   color: $text-color-main;
 
   --color-error: #{$color-error};
-  --color-success: #{$color-accent-1};
+  --color-success: #{$color-correct};
   --bg-color-main: #{$bg-color-dark};
   --bg-color-accent: #{$body-bg-color};
   --text-color-main: #{$text-color-main};

@@ -1,5 +1,5 @@
 import ItamWatermark from "@/components/ui/watermarks/ItamWatermark";
-import cl from "./roomPage.module.scss";
+import cl from "../roomPage.module.scss";
 import BoxAnimation from "@/components/ui/loaders/BoxAnimation";
 import { Suspense } from "react";
 

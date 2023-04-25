@@ -1,7 +1,7 @@
 "use client";
 import { usePathname } from "next/navigation";
 import cl from "./MainNav.module.scss";
-import QuollySvg from "public/images/quolly.svg";
+import QuollySvg from "@/app/assets/vectors/quolly.svg";
 import Link from "next/link";
 
 const routesWithNavbar = ["/dashboard", "/new_quiz"];
@@ -13,7 +13,7 @@ const MainNav = () => {
   return showNavbar ? (
     <>
       <div className={cl.mainNavWrapper}>
-        <div className={cl.mainNav}>
+        <nav className={cl.mainNav}>
           <Link href={"/join"} aria-label="Присоединиться к игре">
             <QuollySvg className={cl.logo} />
           </Link>
@@ -50,7 +50,7 @@ const MainNav = () => {
               />
             </div>
           </div>
-        </div>
+        </nav>
       </div>
       <div className={cl.mainNavMeasurer}></div>
     </>

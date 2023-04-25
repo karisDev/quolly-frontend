@@ -1,7 +1,7 @@
 "use client";
 import IconInput from "@/components/ui/inputs/IconInput/IconInput";
-import cl from "./roomPage.module.scss";
-import EditSvg from "../../assets/vectors/edit.svg";
+import cl from "../roomPage.module.scss";
+import EditSvg from "@/app/assets/vectors/edit.svg";
 import Button from "@/components/ui/buttons/Button";
 import ItamWatermark from "@/components/ui/watermarks/ItamWatermark";
 import { FC, useState } from "react";
