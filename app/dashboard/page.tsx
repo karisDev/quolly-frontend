@@ -10,6 +10,7 @@ import IconButton from "@/components/ui/buttons/IconButton";
 import { useEffect, useState } from "react";
 import { getQuizes } from "@/components/utils/quizStore";
 import { useRouter } from "next/navigation";
+import { Quiz } from "@/components/types/quiz";
 
 // const mockQuizes = [
 //   {
