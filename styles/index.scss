@@ -5,7 +5,7 @@ $bg-color-dark: #282828;
 $body-bg-color: #424242;
 $body-bg-color-darker: darken($body-bg-color, 8%);
 $text-color-main: #ffffff;
-$text-color-accent: #959ab0;
+$text-color-accent: #b8b8b8;
 $text-color-disabled: #7d7d7d;
 
 $btn-main-bg-color: $color-accent-1;
@@ -68,7 +68,13 @@ body {
 }
 
 html,
-body {
+body,
+#__next {
   min-height: 100%;
   height: 100%;
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
 }

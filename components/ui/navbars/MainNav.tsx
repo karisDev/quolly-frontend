@@ -5,7 +5,7 @@ import QuollySvg from "@/app/assets/vectors/quolly.svg";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const routesWithNavbar = ["dashboard", "constructor"];
+const routesWithNavbar = ["dashboard", "edit_quiz"];
 
 const MainNav = () => {
   const pathname = usePathname();
@@ -47,7 +47,7 @@ const MainNav = () => {
             </li>
           </ul>
           <div className={cl.mainNavRight}>
-            <Link className={cl.mainNavButton} href="/constructor/quiz-152">
+            <Link className={cl.mainNavButton} href="/edit_quiz">
               Создать квиз
             </Link>
             <div className={cl.mainNavUser}>

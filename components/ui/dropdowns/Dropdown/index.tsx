@@ -32,7 +32,7 @@ const Dropdown: React.FC<Props> = ({
   value,
   onClick,
 }) => {
-  const [isExpanded, setIsExpanded] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(false);
   const ref = useRef(null);
 
   useClickOutside(ref, () => {
