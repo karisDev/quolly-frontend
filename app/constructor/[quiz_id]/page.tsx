@@ -1,12 +1,14 @@
 import cl from "./styles.module.scss";
-import { FiltersView, QuestionView, SlidesView } from "./views";
+import { QuestionScreen } from "./screens";
+import SlidesScreen from "./screens/SlidesScreen";
+import FiltersScreen from "./screens/FiltersScreen";
 
 const Page = () => {
   return (
     <main style={{ display: "none" }} className={cl.newQuizPageWrapper}>
-      <SlidesView />
-      <QuestionView />
-      <FiltersView />
+      <SlidesScreen />
+      <QuestionScreen />
+      <FiltersScreen />
     </main>
   );
 };

@@ -1,6 +1,6 @@
 import cl from "./AccentInput.module.scss";
 
-interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   icon?: JSX.Element;
   placeholder?: string;
   type?: string;
@@ -17,7 +17,7 @@ const AccentInput = ({
   error,
   name,
   ...props
-}: IProps) => {
+}: Props) => {
   return (
     <div
       className={`${cl.iconInputWrapper} ${className} ${error ? cl.error : ""}`}

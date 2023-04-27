@@ -6,7 +6,6 @@
   width: 100%;
   max-width: 1400px;
   overflow: hidden;
-  padding: 0 24px;
 }
 
 .sideContainer {
@@ -16,5 +15,90 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: var(--bg-color-accent);
+  background-color: var(--bg-color-accent-darker);
+}
+
+.preview {
+  width: calc(200px - 32px);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  .previewTitle {
+    font-size: 14px;
+    font-weight: bold;
+    max-width: calc(200px - 32px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.questionContainer {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  .fileUpload {
+    cursor: pointer;
+    flex: 1;
+    background-color: var(--bg-color-accent);
+    box-shadow: 0px 4px 0px var(--input-secondary-shadow-color);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffffa3;
+    gap: 16px;
+  }
+  .questionInputGroup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+    .questionInput {
+      position: relative;
+      border-radius: 8px;
+      border: 2px solid #8f8f8f;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      input {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        width: 100%;
+        height: 100%;
+        font-size: 24px;
+        text-align: center;
+        font-weight: bold;
+        &::placeholder {
+          color: #282828;
+          font-weight: bold;
+        }
+      }
+      &:nth-child(1) {
+        background-color: var(--color-palette-1);
+      }
+      &:nth-child(2) {
+        background-color: var(--color-palette-2);
+      }
+      &:nth-child(3) {
+        background-color: var(--color-palette-3);
+      }
+      &:nth-child(4) {
+        cursor: pointer;
+        color: #ffffffa3;
+        background-color: var(--bg-color-accent);
+      }
+      .deleteQuestion {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        color: #282828;
+        cursor: pointer;
+      }
+    }
+  }
 }

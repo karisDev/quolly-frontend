@@ -3,8 +3,10 @@
 $color-accent-1: #ff4f4f;
 $bg-color-dark: #282828;
 $body-bg-color: #424242;
+$body-bg-color-darker: darken($body-bg-color, 8%);
 $text-color-main: #ffffff;
 $text-color-accent: #959ab0;
+$text-color-disabled: #7d7d7d;
 
 $btn-main-bg-color: $color-accent-1;
 $btn-main-text-color: #282828;
@@ -40,8 +42,10 @@ body {
   --color-success: #{$color-correct};
   --bg-color-main: #{$bg-color-dark};
   --bg-color-accent: #{$body-bg-color};
+  --bg-color-accent-darker: #{$body-bg-color-darker};
   --text-color-main: #{$text-color-main};
   --text-color-accent: #{$text-color-accent};
+  --text-color-disabled: #{$text-color-disabled};
   --color-accent-1: #{$color-accent-1};
   --color-palette-1: #{$color-palette-1};
   --color-palette-2: #{$color-palette-2};
@@ -59,6 +63,8 @@ body {
   --btn-main-disabled-bg-color: #{$btn-main-disabled-bg-color};
   --btn-main-disabled-text-color: #{$btn-main-disabled-text-color};
   --btn-main-disabled-shadow-color: #{$btn-main-disabled-shadow-color};
+
+  --dropdown-border-color: #bbbbbb;
 }
 
 html,
