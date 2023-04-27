@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import { createQuiz, getMaxId, getQuizes } from "@/components/utils/quizStore";
 import { editQuizViewModel } from "./page.vm";
 import { observer } from "mobx-react-lite";
+import { Quiz } from "@/components/types/quiz";
 
 export interface PropsWithVm {
   vm: editQuizViewModel | null;

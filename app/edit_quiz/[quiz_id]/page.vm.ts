@@ -1,3 +1,4 @@
+import { Quiz } from "@/components/types/quiz";
 import { setQuizes } from "@/components/utils/quizStore";
 import { getQuizes } from "@/components/utils/quizStore";
 import { configure, makeAutoObservable } from "mobx";
