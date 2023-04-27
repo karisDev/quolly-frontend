@@ -8,12 +8,16 @@ import TrashSvg from "../assets/trash.svg";
 interface SlidePreview {
   title: string;
   index: number;
+  active: boolean;
   onClick: () => void;
 }
 
 const SlidePreview: FC<SlidePreview> = (p) => {
   return (
-    <div className={cl.preview}>
+    <div
+      className={`${cl.preview} ${p.active ? cl.active : ""}`}
+      onClick={p.onClick}
+    >
       <p className={cl.previewTitle}>
         {p.index}. {p.title}
       </p>

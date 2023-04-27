@@ -47,7 +47,7 @@ const MainNav = () => {
             </li>
           </ul>
           <div className={cl.mainNavRight}>
-            <Link className={cl.mainNavButton} href="/edit_quiz">
+            <Link className={cl.mainNavButton} href="/edit_quiz/new">
               Создать квиз
             </Link>
             <div className={cl.mainNavUser}>
