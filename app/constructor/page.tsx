@@ -1,8 +1,8 @@
 "use client";
 import cl from "./styles.module.scss";
-import { QuestionScreen } from "./screens";
 import SlidesScreen from "./screens/SlidesScreen";
 import FiltersScreen from "./screens/FiltersScreen";
+import QuestionScreen from "./screens/QuestionScreen";
 
 const Page = ({ params }: { params: any }) => {
   return (

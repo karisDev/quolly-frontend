@@ -4,7 +4,7 @@ import FileUpload from "../components/FileUpload";
 import AddSvg from "../assets/add.svg";
 import RemoveSvg from "../assets/remove.svg";
 
-export const QuestionScreen = () => {
+const QuestionScreen = () => {
   return (
     <div className={cl.questionContainer}>
       <AccentInput placeholder="Введите вопрос" />
@@ -27,3 +27,5 @@ export const QuestionScreen = () => {
     </div>
   );
 };
+
+export default QuestionScreen;
