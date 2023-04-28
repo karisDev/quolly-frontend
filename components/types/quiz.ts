@@ -6,7 +6,7 @@ export interface Answer {
 
 export interface Question {
   id: number;
-  type: "default";
+  type: "default" | "true/false";
   text: string;
   image?: string;
   answers: Answer[];

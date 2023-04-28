@@ -22,55 +22,87 @@ const QuestionScreen: FC<PropsWithVm> = (x) => {
         }}
       />
       <FileUpload />
-      <div className={cl.questionInputGroup}>
-        <div className={cl.questionInput}>
-          <input
-            value={question!.answers[0].text}
-            onChange={(e) => {
-              question!.answers[0].text = e.target.value;
-            }}
-            placeholder="Правильный ответ"
-            maxLength={25}
-          />
+      {question!.type === "default" && (
+        <div className={cl.questionInputGroup}>
+          <div className={cl.questionInput}>
+            <input
+              value={question!.answers[0].text}
+              onChange={(e) => {
+                question!.answers[0].text = e.target.value;
+              }}
+              placeholder="Правильный ответ"
+              maxLength={25}
+            />
+          </div>
+          <div className={cl.questionInput}>
+            <input
+              value={question!.answers[1].text}
+              onChange={(e) => {
+                question!.answers[1].text = e.target.value;
+              }}
+              placeholder="Неверный ответ"
+              maxLength={25}
+            />
+          </div>
+          <div className={cl.questionInput}>
+            <input
+              value={question!.answers[2].text}
+              onChange={(e) => {
+                question!.answers[2].text = e.target.value;
+              }}
+              placeholder="Неверный ответ"
+              maxLength={25}
+            />
+          </div>
+          <div className={cl.questionInput}>
+            <input
+              value={question!.answers[3].text}
+              onChange={(e) => {
+                question!.answers[3].text = e.target.value;
+              }}
+              placeholder="Неверный ответ"
+              maxLength={25}
+            />
+          </div>
         </div>
-        <div className={cl.questionInput}>
-          <input
-            value={question!.answers[1].text}
-            onChange={(e) => {
-              question!.answers[1].text = e.target.value;
-            }}
-            placeholder="Неверный ответ"
-            maxLength={25}
-          />
+      )}
+      {question!.type === "true/false" && (
+        <div className={`${cl.questionInputGroup} ${cl.trueFalse}`}>
+          <div
+            className={cl.questionInput}
+            style={{ backgroundColor: "var(--color-success)" }}
+          >
+            <input
+              value={question!.answers[0].text}
+              onChange={(e) => {
+                question!.answers[0].text = e.target.value;
+              }}
+              placeholder="Верный ответ"
+              maxLength={25}
+            />
+          </div>
+          <div
+            className={cl.questionInput}
+            style={{ backgroundColor: "var(--color-error)" }}
+          >
+            <input
+              value={question!.answers[1].text}
+              onChange={(e) => {
+                question!.answers[1].text = e.target.value;
+              }}
+              placeholder="Неверный ответ"
+              maxLength={25}
+            />
+          </div>
         </div>
-        <div className={cl.questionInput}>
-          <input
-            value={question!.answers[2].text}
-            onChange={(e) => {
-              question!.answers[2].text = e.target.value;
-            }}
-            placeholder="Неверный ответ"
-            maxLength={25}
-          />
-        </div>
-        <div className={cl.questionInput}>
-          <input
-            value={question!.answers[3].text}
-            onChange={(e) => {
-              question!.answers[3].text = e.target.value;
-            }}
-            placeholder="Неверный ответ"
-            maxLength={25}
-          />
-        </div>
-        {/* <div className={cl.questionInput}>
+      )}
+      {/* <div className={cl.questionInput}>
           <RemoveSvg className={cl.deleteQuestion} />
           <input placeholder="Введите ответ" maxLength={25} />
         </div>
         <div className={cl.questionInput}>
           <AddSvg />
         </div> */}
-      </div>
     </div>
   );
 };

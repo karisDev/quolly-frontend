@@ -140,5 +140,8 @@
         cursor: pointer;
       }
     }
+    &.trueFalse {
+      grid-template-rows: 1fr;
+    }
   }
 }

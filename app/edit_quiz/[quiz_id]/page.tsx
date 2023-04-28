@@ -38,7 +38,7 @@ const Page = ({ params }: { params: any }) => {
       <main style={{ display: "none" }} className={cl.newQuizPageWrapper}>
         <SlidesScreen vm={vm} />
         <QuestionScreen vm={vm} />
-        <FiltersScreen onSave={vm.saveQuiz} />
+        <FiltersScreen onSave={vm.saveQuiz} vm={vm} />
       </main>
     </>
   );
