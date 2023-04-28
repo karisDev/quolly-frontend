@@ -48,7 +48,7 @@ export class editQuizViewModel {
           {
             id: 1,
             type: "default",
-            text: "",
+            text: "Вопросы?",
             answers: [
               {
                 id: 1,
@@ -87,7 +87,7 @@ export class editQuizViewModel {
     this.currentQuiz.questions.push({
       id: newId,
       type: "default",
-      text: "",
+      text: "Вопросы?",
       answers: [
         {
           id: 1,
@@ -120,5 +120,23 @@ export class editQuizViewModel {
     newQuizes.push(this.currentQuiz);
     setQuizes(newQuizes);
     alert("Сохранено");
+  };
+
+  public deleteQuestion = (id: number) => {
+    const newQuestions = this.currentQuiz.questions.filter((q) => q.id !== id);
+    this.currentQuiz.questions = newQuestions;
+    this.selectedQuestionId = newQuestions[0].id;
+  };
+
+  public duplicateQuestion = (id: number) => {
+    const question = this.currentQuiz.questions.find((q) => q.id === id);
+    if (question) {
+      const newId =
+        this.currentQuiz.questions.reduce((max, q) => Math.max(max, q.id), 0) +
+        1;
+      const newQuestion = { ...question, id: newId };
+      this.currentQuiz.questions.push(newQuestion);
+      this.selectedQuestionId = newId;
+    }
   };
 }

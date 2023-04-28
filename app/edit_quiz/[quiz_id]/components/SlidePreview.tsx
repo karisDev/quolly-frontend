@@ -10,6 +10,8 @@ interface SlidePreview {
   index: number;
   active: boolean;
   onClick: () => void;
+  onDelete: () => void;
+  onCopy: () => void;
 }
 
 const SlidePreview: FC<SlidePreview> = (p) => {
@@ -25,10 +27,10 @@ const SlidePreview: FC<SlidePreview> = (p) => {
         <Image src={preview} alt="preview" />
       </div>
       <div className={cl.previewControls}>
-        <button className={cl.button}>
+        <button className={cl.button} onClick={p.onCopy}>
           <CopySvg />
         </button>
-        <button className={cl.button}>
+        <button className={cl.button} onClick={p.onDelete}>
           <TrashSvg />
         </button>
       </div>

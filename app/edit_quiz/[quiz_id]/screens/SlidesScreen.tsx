@@ -7,9 +7,6 @@ import { PropsWithVm } from "../page";
 import { observer } from "mobx-react-lite";
 
 const SlidesScreen: FC<PropsWithVm> = (x) => {
-  useEffect(() => {
-    console.log(x.vm);
-  }, [x.vm]);
   return (
     <div className={cl.sideContainer}>
       {x.vm && x.vm.currentQuiz && x.vm.currentQuiz.questions.length > 0 ? (
@@ -22,6 +19,8 @@ const SlidesScreen: FC<PropsWithVm> = (x) => {
               onClick={() => {
                 x.vm!.selectedQuestionId = v.id;
               }}
+              onDelete={() => x.vm!.deleteQuestion(v.id)}
+              onCopy={() => x.vm!.duplicateQuestion(v.id)}
             />
             <div className={cl.separator}></div>
           </div>
