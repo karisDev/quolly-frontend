@@ -13,10 +13,6 @@ import { Player } from "./types";
 const RoomView = observer(({ roomId }: { roomId: any }) => {
   const vm = useMemo(() => new roomViewModel(roomId), [roomId]);
 
-  useEffect(() => {
-    console.log(vm.state ?? "no state", vm.question);
-  }, [vm.state]);
-
   const onChooseAnswer = (id: number) => {
     if (vm.state !== "QUESTION") return;
 
@@ -33,25 +29,21 @@ const RoomView = observer(({ roomId }: { roomId: any }) => {
       {vm.state === "WAITING" && <WaitingScreen />}
       {/* question or answer */}
       {(vm.state === "ANSWER" || vm.state === "QUESTION") && (
-        <QuestionScreen
-          onChooseAnswer={onChooseAnswer}
-          question={vm.question}
-          selectedAnswerId={vm.selectedAnswerId}
-          secondsLeft={vm.secondsLeft}
-          correctAnswerId={vm.correctAnswerId}
-          />
+        <QuestionScreen vm={vm} />
       )}
       {vm.state === "LEADERBOARD" && (
         <LeaderboardScreen
-          questionNumber={vm.question?.number ?? 0}
-          questionCount={vm.questionCount ?? 0}
+          questionNumber={vm.question?.id ?? 1}
+          questionCount={vm.questionCount ?? 1}
           players={vm.leaderboard?.players ?? []}
-          currentPlayer={vm.leaderboard?.currentPlayer ?? {
-            name: "",
-            place: 1,
-            score: 0,
-            scoreChange: 0
-          }}
+          currentPlayer={
+            vm.leaderboard?.currentPlayer ?? {
+              name: "",
+              place: 1,
+              score: 0,
+              scoreChange: 0,
+            }
+          }
         />
       )}
     </main>

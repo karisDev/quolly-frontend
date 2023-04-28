@@ -5,7 +5,9 @@ import {
   makeObservable,
   observable,
 } from "mobx";
-import { Leaderboard, Question } from "./types";
+import { Leaderboard } from "./types";
+import MockQuizes from "./useMockQuizes";
+import { Quiz, Question } from "@/components/types/quiz";
 
 type GameState =
   | "JOIN"
@@ -14,6 +16,8 @@ type GameState =
   | "ANSWER"
   | "LEADERBOARD"
   | "END";
+
+const MockQuiz = MockQuizes;
 
 const MockQuestion = {
   text: "Какой сегодня день?",
@@ -77,37 +81,51 @@ configure({
 export class roomViewModel {
   state: GameState = "JOIN";
   secondsLeft: number = -1;
-  correctAnswerId: number | null = null;
   selectedAnswerId: number | null = null;
-  question: Question | null = MockQuestion;
-  questionCount: number | null = 5;
+  question: Question = MockQuiz.questions[0];
+  questionCount: number | null = MockQuiz.questions.length;
   leaderboard: Leaderboard | null = MockLeaderboard;
+  quiz: Quiz = MockQuiz;
 
   constructor(public roomId: string) {
     makeAutoObservable(this);
 
     this.timerInterval = setInterval(() => {
       this.autoupdateTimer();
-    }, 1000)
+    }, 1000);
   }
 
   private timerInterval: NodeJS.Timer | null = null;
 
   private onTimeDecrement = () => {
     if (this.secondsLeft === 0) {
-      this.correctAnswerId = 2
       this.state = "ANSWER";
+      // setTimeout(() => {
+      //   this.state = "LEADERBOARD";
+      // }, 2500);
       setTimeout(() => {
-        this.state = "LEADERBOARD"
-      }, 2500);
+        const currentQuestionIndex = this.quiz.questions.findIndex(
+          (q) => this.question.id === q.id
+        );
+        if (currentQuestionIndex !== this.quiz.questions.length - 1) {
+          this.state = "QUESTION";
+          this.question = this.quiz.questions[currentQuestionIndex + 1];
+          this.secondsLeft = 10;
+          this.selectedAnswerId = null;
+          console.log(currentQuestionIndex + 1);
+        } else {
+          this.state = "LEADERBOARD";
+        }
+      }, 3000);
     }
   };
 
   private autoupdateTimer = () => {
-    if (this.secondsLeft <= 0) { return;};
-
-    this.secondsLeft -= 1;
-    this.onTimeDecrement();
+    if (this.secondsLeft > 0) {
+      this.secondsLeft -= 1;
+      this.onTimeDecrement();
+      return;
+    }
   };
 
   public enterGame = (name: string) => {
@@ -115,10 +133,9 @@ export class roomViewModel {
 
     this.state = "WAITING";
     setTimeout(() => {
-      this.secondsLeft = 5;
+      this.secondsLeft = 10;
       this.state = "QUESTION";
     }, 3000);
-      
   };
 
   public selectAnswer = (id: number) => {

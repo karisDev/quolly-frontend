@@ -123,7 +123,15 @@ const Page = () => {
               >
                 Изменить
               </IconButton>
-              <IconButton icon={<PlaySvg />}>Запустить</IconButton>
+              <IconButton
+                icon={<PlaySvg />}
+                onClick={() =>
+                  // @ts-ignore
+                  (window.location = "https://quolly-admin.onixx.org/")
+                }
+              >
+                Запустить
+              </IconButton>
             </div>
           </div>
         ))}
